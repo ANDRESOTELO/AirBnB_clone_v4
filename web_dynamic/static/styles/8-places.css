@@ -99,3 +99,15 @@
 .user {
   margin-bottom: 1.5%;
 }
+
+.reviews {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.reviews > h2 {
+    margin-bottom: 8px;
+}
