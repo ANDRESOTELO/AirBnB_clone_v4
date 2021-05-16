@@ -106,3 +106,7 @@ button:hover {
 .locations:hover .popover {
     visibility: visible;
 }
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
