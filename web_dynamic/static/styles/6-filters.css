@@ -32,7 +32,7 @@ button:hover {
 }
 .filters h3 {
     margin-left: 15%;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     font-weight: 600;
 }
 .filters h4 {
@@ -84,6 +84,7 @@ button:hover {
 }
 
 .locations .popover {
+    padding: 10px 0;
     margin-top: 0%;
 }
 .popover ul {

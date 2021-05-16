@@ -23,17 +23,20 @@ $(document).ready(function() {
             $("DIV.amenities > h4").html("&nbsp;");
         }
     });
-    listLocations = [];
+    listLocations = {};
     const dict_city = {};
     $('input[type=checkbox]#checkCity').change(function() {
         if ($(this).is(':checked')) {
             dict_city[$(this).data('id')] = $(this).data('name');
+            listLocations[$(this).data('id')] = $(this).data('name');
         }
         else {
             delete dict_city[$(this).data('id')];
+            delete listLocations[$(this).data('id')];
         }
-        if (listLocations.length > 0) {
-            const cities = list_amenities.join(", ");
+        locations = Object.values(listLocations);
+        if (locations.length > 0) {
+            const cities = locations.join(", ");
             $("DIV.locations > h4").text(cities);
         } else {
             $("DIV.locations > h4").html("&nbsp;");
@@ -41,13 +44,25 @@ $(document).ready(function() {
         
     });
 
-    dict_state = {}
+    const dict_state = {}
     $('input[type=checkbox]#checkState').change(function() {
         if ($(this).is(':checked')) {
             dict_state[$(this).data('id')] = $(this).data('name');
+            console.log($(this).data('name'));
+            listLocations[$(this).data('id')] = $(this).data('name');
+
         }
         else {
-            delete dict_state[$(this).data(id)];
+            delete dict_state[$(this).data('id')];
+            delete listLocations[$(this).data('id')];
+
+        }
+        locations = Object.values(listLocations);
+        if (locations.length > 0) {
+            const cities = locations.join(", ");
+            $("DIV.locations > h4").text(cities);
+        } else {
+            $("DIV.locations > h4").html("&nbsp;");
         }
     });
    
